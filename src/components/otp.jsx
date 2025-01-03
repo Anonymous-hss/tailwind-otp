@@ -6,14 +6,12 @@ export function Otp({ number }) {
   const [disabled, setDisabled] = useState(true);
   return (
     <div className="flex justify-center">
-      {Array(number).map((x) => (
-        <SubotpBox
-          reference={ref1}
-          onDone={() => {
-            ref2.current.focus();
-          }}
-        />
-      ))}
+      {Array(number).map(x => <SubotpBox reference={ref} onDone=(()=> {
+        ref2.current.focus();
+      }) goBack (()=> {
+        
+      }) />)}
+      
       <br />
       <Button disabled={disabled}> Sign up </Button>
     </div>
